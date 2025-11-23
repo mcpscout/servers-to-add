@@ -1,0 +1,183 @@
+name: Submit MCP Server
+description: Submit a new MCP server to be added to MCPScout.ai
+title: "[Submission] "
+labels: ["submission", "new-server"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a new MCP server! Please fill out the information below to help us review and add your server to MCPScout.ai.
+
+  - type: input
+    id: server-name
+    attributes:
+      label: Server Name
+      description: The name of your MCP server
+      placeholder: e.g., my-awesome-mcp-server
+    validations:
+      required: true
+
+  - type: input
+    id: repository-url
+    attributes:
+      label: Repository URL
+      description: The GitHub repository URL for your MCP server
+      placeholder: https://github.com/username/repository
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A brief description of what your MCP server does
+      placeholder: This server provides...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Primary Language
+      description: What language is your MCP server written in?
+      options:
+        - TypeScript
+        - Python
+        - Rust
+        - Go
+        - JavaScript
+        - C#
+        - Java
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: What are the primary use cases for this server?
+      placeholder: |
+        - Use case 1
+        - Use case 2
+        - Use case 3
+
+  - type: textarea
+    id: installation
+    attributes:
+      label: Installation Instructions
+      description: How do users install and configure your server?
+      placeholder: |
+        ```bash
+        npm install my-server
+        ```
+      render: markdown
+
+  - type: input
+    id: npm-package
+    attributes:
+      label: NPM Package Name (if applicable)
+      description: If your server is published on NPM, provide the package name
+      placeholder: e.g., @username/mcp-server
+
+  - type: input
+    id: pypi-package
+    attributes:
+      label: PyPI Package Name (if applicable)
+      description: If your server is published on PyPI, provide the package name
+      placeholder: e.g., my-mcp-server
+
+  - type: textarea
+    id: environment-variables
+    attributes:
+      label: Required Environment Variables
+      description: List any required environment variables and their purpose
+      placeholder: |
+        - `API_KEY`: Your API key for the service
+        - `BASE_URL`: The base URL for the API (optional)
+      render: markdown
+
+  - type: textarea
+    id: tools
+    attributes:
+      label: Available Tools
+      description: List the main tools/functions your server provides
+      placeholder: |
+        - `search`: Search for items
+        - `create`: Create new items
+        - `update`: Update existing items
+
+  - type: textarea
+    id: resources
+    attributes:
+      label: Available Resources
+      description: List any resources your server exposes (if applicable)
+      placeholder: |
+        - `resource://items`: List of all items
+        - `resource://config`: Server configuration
+
+  - type: dropdown
+    id: authentication
+    attributes:
+      label: Authentication Required
+      description: Does your server require authentication?
+      options:
+        - "No"
+        - "Yes - API Key"
+        - "Yes - OAuth"
+        - "Yes - Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: External Dependencies
+      description: List any external services or APIs your server depends on
+      placeholder: |
+        - Service Name API
+        - Database (PostgreSQL, MongoDB, etc.)
+
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: What license is your server released under?
+      placeholder: e.g., MIT, Apache-2.0, GPL-3.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: maintenance
+    attributes:
+      label: Maintenance Status
+      description: What is the current maintenance status of this server?
+      options:
+        - "Actively Maintained"
+        - "Stable - Minimal Updates"
+        - "Experimental"
+        - "Looking for Maintainers"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any other information you'd like to share about your server
+      placeholder: Special features, limitations, roadmap, etc.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist
+      description: Please confirm the following
+      options:
+        - label: I have tested this server and confirmed it works
+          required: true
+        - label: The repository includes a README with clear documentation
+          required: true
+        - label: I am the author or have permission to submit this server
+          required: true
+        - label: The server follows the MCP specification
+          required: true
